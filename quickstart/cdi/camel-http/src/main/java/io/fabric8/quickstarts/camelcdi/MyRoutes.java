@@ -28,7 +28,7 @@ import org.apache.camel.cdi.Uri;
 @ContextName("myCamel")
 public class MyRoutes extends RouteBuilder {
 
-    @Inject @Uri("timer:foo?period=5000")
+    @Inject @Uri("direct:start")
     private Endpoint inputEndpoint;
 
     @Inject @Uri("netty4-http:http://{{service:qs-cdi-camel-jetty:localhost:8080}}/camel/hello?keepAlive=false&disconnect=true")
